@@ -1,0 +1,93 @@
+<!--
+     Project    : Budget Management Project using HTML, CSS, Javascript, jQuery
+     Created by : K. Deepak Kumar
+     Contact at : deepakplay14@gmail.com
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Budget Calculator - JS Project</title>  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"></noscript>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-H6PDZ8R2J1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-H6PDZ8R2J1');
+    </script>
+    
+</head>
+<body>
+    <main class="container">
+        <div class="bgTop">
+            <div class="totalBudget">
+                <div class="heading">
+                    <span>Available Budget in </span>
+                    <span class="budgetDate"></span>
+                </div>
+                <span class="total">+ 0.00</span>
+                <div class="incomeBudget">
+                    <span>Income</span>
+                    <span class="totalIncome">+ 0.00</span>
+                </div>
+                <div class="expensesBudget">
+                    <span>Expenses</span>
+                    <span class="bgExpenses">
+                        <span class="totalExpenses">- 0.00</span>
+                        <span class="expensesPercentage">0%</span>
+                    </span>                    
+                </div>
+            </div>
+        </div>
+        <div class="budgetForm">
+            <select id="bgType">
+                <option value="+">+</option>
+                <option value="-">-</option>
+            </select>
+            <input type="text" placeholder="Enter Description" id="bgdescription">
+            <input type="number" placeholder="Value" id="bgamount">
+            <button type="submit" id="bgsubmit"><i class="fas fa-check"></i></button>
+            
+        </div>
+            <div class="bgContainer">
+                <div class="incomeBg">
+                    <h3>Income</h3>
+                    <ul class="bglist">
+                        <li class="inc-1">
+                            <span class="itemDescription">Test Income</span>
+                            <div>
+                                <span class="itemValue">+ 6,000.00</span>
+                                <button class="edit"><i class="fas fa-pen"></i></button>
+                                <button class="delete"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="expensesBg">
+                    <h3>Expenses</h3>
+                    <ul class="bglist">
+                        <li class="exp-1">
+                            <span class="itemDescription">Test Expenses</span>
+                            <div>
+                                <span class="itemValue">- 1,000.00</span>
+                                <span class="itemPercentage">25%</span>
+                                <button class="edit"><i class="fas fa-pen"></i></button>
+                                <button class="delete"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </main>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/script.js"></script>
+</body>
+</html>

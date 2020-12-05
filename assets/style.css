@@ -1,0 +1,294 @@
+/*
+     Project    : Budget Management Project using HTML, CSS, Javascript, jQuery
+     Created by : K. Deepak Kumar
+     Contact at : deepakplay14@gmail.com
+*/
+
+*{
+    margin:0px;
+    border:0px;
+    padding:0px;
+    outline:none;
+    text-decoration:none;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    letter-spacing: 1.1;
+}
+
+.bgTop{
+    height: 420px;
+    background: linear-gradient(to right,rgba(0,0,0,.5),rgba(0,0,0,.3)),url(back.webp);
+    background-size: cover;
+    background-position: center;
+    padding: 40px 10px;
+    color:#fff;
+}
+
+.totalBudget{
+    max-width: 430px;
+    height: 360px;
+    text-align:center;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,.2);
+    padding:40px 20px 30px ;
+    border-radius:15px;
+}
+
+.heading{
+    font-size:1.4rem;
+}
+
+.total{
+    display: inline-block;
+    font-size: 3rem;
+    padding: 15px 0 20px;
+}
+
+.incomeBudget, .expensesBudget{
+    height: 50px;
+    padding: 15px 20px;
+    margin:15px 20px;
+    font-weight: 400;
+    text-align: left;
+    border-radius: 5px;
+    font-size: 1.05rem;
+    color:#EEE;
+    text-transform: uppercase;
+}
+
+.totalIncome, .bgExpenses{
+    float: right;
+    margin-right: 50px;
+    position: relative;
+}
+
+.bgExpenses .expensesPercentage{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: -50px;
+    padding: 5px;
+    background-color: rgba(0,0,0,.2);
+    font-size: .9rem;
+    transform: translateY(-15%);
+    border-radius: 5px;
+}
+
+.incomeBudget{
+    background-color:rgb(0, 151, 0);
+    
+}
+
+.expensesBudget{
+    background-color:rgb(201, 0, 0);
+}
+
+.budgetForm{
+    padding:15px 0;
+    background-color: #fff;
+    box-shadow:0 0 15px rgba(0,0,0,.2);
+    text-align: center;
+}
+
+.budgetForm select, #bgdescription, #bgamount{
+    height: 45px;
+    font-size: 1rem;
+    border:1px solid #DFDFDF;
+    margin:3px;
+    color:#333;
+    border-radius: 5px;
+    background-color: #FFF;
+    
+}
+.budgetForm select{
+    width:50px;
+    padding:5px;
+}
+
+#bgdescription, #bgamount{
+    padding:12px 15px;
+    font-weight: 300;
+}
+
+#bgdescription{
+    width:40%;
+    max-width: 400px;
+}
+#bgamount{
+    width:120px;
+    text-align: center;
+}
+
+.errorInput{
+    border:1px solid rgb(255, 123, 123) !important;
+    box-shadow: 0 0px 4px rgb(255, 139, 139) !important;
+}
+
+.errorsubmit{
+    background-color: #ffd3d3 !important;
+    border: 1px solid rgb(255, 118, 118) !important;
+    box-shadow: 0 0px 4px rgb(255, 139, 139) !important;
+}
+
+.budgetForm select:focus,
+#bgdescription:focus,
+#bgamount:focus{
+    transition: all .2s ease;
+    border: 1px solid #19dad3;
+}
+
+.budgetForm button{
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    border: 1px solid #C0C0C0;
+    margin-left:3px;
+    transition: all .2s ease;
+}
+.budgetForm button i{
+    font-size: 1rem;
+    padding:8px;
+    color:#333;
+    cursor: pointer;
+}
+.budgetForm button:hover{
+    background-color: #81ff81;
+    border: 1px solid rgb(0, 206, 0);
+}
+
+.budgetForm button:active{
+    transition: box-shadow .1s ease;
+    box-shadow: 0 0 5px #007e00;;
+}
+
+.bgContainer{
+    width:70%;
+    display:flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    margin:0 auto;
+}
+
+.incomeBg, .expensesBg{
+    box-shadow: 0 2px 10px rgba(0,0,0,.22);
+    padding:20px;
+    width:48%;
+    min-width:400px;
+    margin:20px auto 0;
+    border-radius: 8px;
+    font-size:1.1rem;
+}
+
+.incomeBg h3, .incomeBg .itemValue{
+    color:rgb(0, 109, 0);
+}
+
+.itemDescription{
+    color:#404040;
+}
+
+.incomeBg .itemValue,
+.expensesBg .expensesPercentage {
+    margin-right:16px;
+}
+
+.itemPercentage{
+    margin-left:0px;
+    margin-right:5px;
+}
+
+.expensesBg h3, .expensesBg .itemValue{
+    color:rgb(207, 0, 0);
+}
+
+.bgContainer h3{
+    text-transform: uppercase;
+    margin:8px 8px 20px;
+}
+
+.bglist{
+    margin:8px;
+    font-weight: 400;
+    color:#333;
+}
+
+.bglist li:first-child{
+    border-top: 1px solid #E0E0E0;
+}
+
+.bglist li{
+    padding:15px 0;
+    position: relative;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.bglist li div{
+    display: inline-block;
+    position: absolute;
+    right:0;
+}
+
+.bglist li .itemPercentage{
+    background-color: rgb(255, 213, 213);
+    color:rgb(194, 0, 0);
+    padding:4px 0;
+    border-radius: 5px;
+    font-size: .9rem;
+    text-align:center;
+    width:35px;
+    display: inline-block;
+}
+
+.edit, .delete{
+    padding:6px 8px;
+    border-radius: 5px;
+    font-size:.88rem;
+    transition: all .15s ease;
+}
+
+.edit{
+    background-color: rgb(230, 230, 255);
+    color:rgb(70, 70, 255);
+}
+
+.delete{
+    background-color: rgb(255, 230, 230);;
+    color:rgb(255, 80, 80);
+}
+
+.edit:hover{
+    background-color: rgb(210, 210, 255);
+    color:rgb(40, 40, 253);
+}
+
+.delete:hover{
+    background-color: rgb(255, 210, 210);;
+    color:rgb(255, 50, 50);
+}
+
+@media (max-width:1480px){
+    .bgContainer{
+        width:90%;
+    }
+}
+
+@media (max-width:1090px){
+    .bgContainer{
+        width:95%;
+        flex-direction: column;
+        justify-content: space-between;
+        margin:0 auto 40px;
+    }
+    .bgContainer>div{
+        width: 90%;        
+    }
+}
